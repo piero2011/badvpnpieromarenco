@@ -7,13 +7,13 @@ if [ -f "/usr/local/bin/badvpn-udpgw" ]
 then
 	tput setaf 3 ; tput bold ; echo ""
 	echo ""
-	echo "O BadVPN já foi instalado com sucesso."
-	echo "Para executar, crie uma sessão screen"
-	echo "E execute o comando:"
+	echo "instalacion completada."
+	echo "ejuctar el script con"
+	echo "El comando:"
 	echo ""
-	echo "badudp"
+	echo "screen badudp"
 	echo ""
-	echo "E deixe a sessão screen rodando em segundo plano."
+	echo "el script quedara en segudo plano recuerda siempre ejecutar el comando si reinicias tu vps."
 	echo "" ; tput sgr0
 	exit
 else
@@ -27,7 +27,7 @@ echo "" ; tput sgr0
 read -p "Deseja continuar? [s/n]: " -e -i n resposta
 if [[ "$resposta" = 's' ]]; then
 	echo ""
-	echo "A instalação pode demorar bastante... seja paciente!"
+	echo "A instalação pode demorar bastante... sea paciente!"
 	sleep 3
 	apt-get update -y
 	apt-get install screen wget gcc build-essential g++ make -y
@@ -56,13 +56,13 @@ if [[ "$resposta" = 's' ]]; then
 	clear
 	tput setaf 3 ; tput bold ; echo ""
 	echo ""
-	echo "BadVPN instalado com sucesso."
-	echo "Para usar, crie uma sessão screen"
-	echo "E execute o comando:"
+	echo "instalacion completada."
+	echo "ejuctar el script con"
+	echo "El comando:"
 	echo ""
-	echo "badudp"
+	echo "screen badudp"
 	echo ""
-	echo "E deixe a sessão screen rodando em segundo plano."
+	echo "el script quedara en segudo plano recuerda siempre ejecutar el comando si reinicias tu vps."
 	echo "" ; tput sgr0
 	exit
 else 
