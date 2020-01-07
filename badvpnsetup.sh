@@ -44,7 +44,7 @@ if [[ "$resposta" = 's' ]]; then
 	wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2
 	tar xf badvpn-1.999.128.tar.bz2
 	cd bad*
-	cmake -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_UDPGW=1
+	cmake -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_TUN2SOCKS=1 -DBUILD_UDPGW=1
 	make install
 	cd ..
 	rm -r bad*
