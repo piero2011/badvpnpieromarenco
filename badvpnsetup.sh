@@ -41,9 +41,9 @@ if [[ "$resposta" = 's' ]]; then
 	rm -r cmake*
 	mkdir badvpn-build
 	cd badvpn-build
-	wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2
-	tar xf badvpn-1.999.128.tar.bz2
-	cd bad*
+	wget https://github.com/ambrop72/badvpn/archive/refs/tags/1.999.130.zip
+	unzip 1.999.130.zip
+	cd 1.99.130
 	cmake -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_TUN2SOCKS=1 -DBUILD_UDPGW=1
 	make install
 	cd ..
@@ -51,7 +51,7 @@ if [[ "$resposta" = 's' ]]; then
 	cd ..
 	rm -r badvpn-build
 	echo "#!/bin/bash
-	badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 512 --max-connections-for-client 8" > /bin/badudp
+	badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 512 --max-connections-for-client 10000" > /bin/badudp
 	chmod +x /bin/badudp
 	clear
 	tput setaf 3 ; tput bold ; echo ""
